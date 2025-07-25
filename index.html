@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Je chante oui ou non.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+      body {
+        background-color: #bad1e7; /* Fond gris clair */
+        padding: 40px;
+      }
+      .image-container {
+        margin: 20px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container text-center">
+      <h1 class="my-5">Vraiment ?</h1>
+      <button id="button1" class="btn btn-primary btn-lg mb-4">OUI</button>
+
+      <div id="button2Container" style="display: none;">
+        <button id="button2" class="btn btn-secondary btn-lg mb-4">Vous voulez me voir chanter? (:</button>
+        <div class="image-container">
+          <img src="img/chant.jpg" alt="Chant Image" class="img-fluid rounded" style="max-height: 400px;">
+        </div>
+      </div>
+
+      <div id="button3Container" style="display: none;">
+        <button id="button3" class="btn btn-success btn-lg mb-4">Ah oui vous êtes sérieux. Bon clickez ici alors.</button>
+        <div class="image-container">
+          <img src="img/surpris.jpg" alt="Surpris Image" class="img-fluid rounded" style="max-height: 400px;">
+        </div>
+      </div>
+
+      <p id="paragraph" class="mt-4" style="display: none;">Eh beh non pas aujourd'hui! Mais voici la vidéo de ma chorale disponible ici :)</p>
+
+      <div id="imageContainer" style="display: none;" class="my-4">
+        <div class="image-container">
+          <img src="img/non.jpg" alt="Non Image" class="img-fluid rounded" style="max-height: 400px;">
+        </div>
+        <div class="image-container">
+          <img src="img/chat.jpg" alt="Chat Image" class="img-fluid rounded" style="max-height: 400px;">
+        </div>
+      </div>
+
+      <div id="linksContainer" style="display: none;" class="mt-4">
+        <a id="link1" href="https://www.youtube.com/watch?app=desktop&v=P3C6jMyKV1Y&t=102s" target="_blank" class="btn btn-info btn-lg mb-2">Régarder la vidéo :)</a>
+        <a id="link2" href="https://www.larchemusicale.fr/cali/" target="_blank" class="btn btn-warning btn-lg mb-2 ms-2">+ d'infos :)</a>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('button1').addEventListener('click', function() {
+        document.getElementById('button2Container').style.display = 'block';
+      });
+
+      document.getElementById('button2').addEventListener('click', function() {
+        if (confirm("Vous êtes sérieux là ?")) {
+          document.getElementById('button3Container').style.display = 'block';
+        }
+      });
+
+      document.getElementById('button3').addEventListener('click', function() {
+        document.getElementById('paragraph').style.display = 'block';
+        document.getElementById('imageContainer').style.display = 'block';
+        document.getElementById('linksContainer').style.display = 'block';
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>
